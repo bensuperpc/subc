@@ -1,0 +1,14 @@
+
+	- fgetpos()/fsetpos() should support longer seek.
+
+	- clean up sym.c
+
+	? add parameterized macros
+		- add assert()
+		- fix & in setjmp() and longjmp()
+		? add stdio macros: getc(), putchar(), etc
+
+	? add dynamic local initializers
+
+	? add GOTO and labels
+
