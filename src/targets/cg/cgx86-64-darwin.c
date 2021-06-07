@@ -60,15 +60,15 @@ int cgload2(void) {
 	case addr_label:	lgen("%s\t%c%d(%%rip),%%rcx", op, n); break;
 	case literal: 		ngen("%s\t$%d,%%rcx", op, n); break;
 	case auto_byte:		cgclear2();
-				ngen("%s\t%d(%%rbp),%%rcl", opb, n);
+				ngen("%s\t%d(%%rbp),%%cl", opb, n);
 				break;
 	case auto_word:		ngen("%s\t%d(%%rbp),%%rcx", op, n); break;
 	case static_byte:	cgclear2();
-				lgen("%s\t%c%d(%%rip),%%rcl", opb, n); break;
+				lgen("%s\t%c%d(%%rip),%%cl", opb, n); break;
 				break;
 	case static_word:	lgen("%s\t%c%d(%%rip),%%rcx", op, n); break;
 	case globl_byte:	cgclear2();
-				sgen("%s\t%s(%%rip),%%rcl", opb, s); break;
+				sgen("%s\t%s(%%rip),%%cl", opb, s); break;
 				break;
 	case globl_word:	sgen("%s\t%s(%%rip),%%rcx", op, s); break;
 	case empty:		cgpop2();
@@ -173,10 +173,10 @@ void cgscale(void)	{ gen("shlq\t$3,%rax"); }
 void cgscale2(void)	{ gen("shlq\t$3,%rcx"); }
 void cgunscale(void)	{ gen("shrq\t$3,%rax"); }
 void cgscaleby(int v)	{ ngen("%s\t$%d,%%rcx", "movq", v);
-			  gen("mulq\t%rcx,%rax"); }
+			  gen("mulq\t%rcx"); }
 void cgscale2by(int v)	{ gen("pushq\t%rax");
 			  ngen("%s\t$%d,%%rax", "movq", v);
-			  gen("mulq\t%rcx,%rax");
+			  gen("mulq\t%rcx");
 			  gen("movq\t%rax,%rcx");
 			  gen("popq\t%rax"); }
 void cgunscaleby(int v)	{ ngen("%s\t$%d,%%rcx", "movq", v);

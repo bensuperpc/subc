@@ -1,1 +1,1 @@
-../targets/freebsd-386/crt0-freebsd-386.s
+../targets/freebsd-x86-64/crt0-freebsd-x86-64.s
