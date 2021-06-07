@@ -1,1 +1,1 @@
-targets/freebsd-x86-64/sys-freebsd-x86-64.h
+targets/dos-8086/sys-dos-8086.h

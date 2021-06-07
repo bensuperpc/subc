@@ -1,3 +1,15 @@
+2016-12-12 Fix: char c=-2; stored -2, but char is unsigned. (also by Volkmar)
+2016-12-01 Fix: f(a[1] && a[0]) would generate wrong code. Thanks, Volkmar!
+2016-11-28 Fix: (a,1),2 would generate wrong code. (also by Volkmar)
+2016-11-24 Fix: (x|1)|(x>1) would generate wrong code. (also by Volkmar)
+2016-08-07 OpenBSD: not linking against crtbegin.o. Thanks, Volkmar Klatt!
+2016-07-26 Added NetBSD/386 port supplied by Minux. Thanks!
+2016-07-26 Applied signal() patch for NetBSD/x86-64. Thanks, Minux!
+2016-02-17 Patch: added // comments. Thanks again, Steve!
+2016-02-16 Fix: Darwin back-end emitted wrong asm code. Thanks, Steve Ward!
+2016-02-16 Fix: SubC would miscompile x<256;x=0; (crash). Thanks, Quan Tran!
+2016-02-16 Fix: freopen() had a precedence error. (also by Quan Tran)
+2016-02-16 Fix: Constant folding miscalculated right-shift. (also by Quan Tran)
 2015-02-18 Fix: Emitted wrong arguments to MULQ on x86 in struct* scaling.
 2015-02-02 Fix: Long init lists in array declarations could run out of nodes.
 2014-12-07 Fix: strncpy() should pad destination. Thanks, Alexey Frunze!
